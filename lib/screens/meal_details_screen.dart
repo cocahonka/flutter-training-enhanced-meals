@@ -26,18 +26,18 @@ class MealDetailsScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              clipBehavior: Clip.hardEdge,
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(90),
-                  bottomRight: Radius.circular(90),
-                ),
+            ClipRRect(
+              borderRadius: const BorderRadius.only(
+                bottomLeft: Radius.circular(90),
+                bottomRight: Radius.circular(90),
               ),
-              child: FadeInImage.memoryNetwork(
-                placeholder: kTransparentImage,
-                image: meal.imageUrl,
-                fit: BoxFit.cover,
+              child: Hero(
+                tag: meal.hashCode,
+                child: FadeInImage.memoryNetwork(
+                  placeholder: kTransparentImage,
+                  image: meal.imageUrl,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
             MealDetailsListInfo(title: 'Ingredients', info: meal.ingredients),
