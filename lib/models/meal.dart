@@ -14,6 +14,10 @@ class Meal {
     required this.affordability,
     required this.ingredients,
     required this.steps,
+    required this.isGlutenFree,
+    required this.isLactoseFree,
+    required this.isVegeterian,
+    required this.isVegan,
     required this.categories,
   });
 
@@ -26,6 +30,11 @@ class Meal {
 
   final List<String> ingredients;
   final List<String> steps;
+
+  final bool isGlutenFree;
+  final bool isLactoseFree;
+  final bool isVegeterian;
+  final bool isVegan;
 
   final List<Category> categories;
 
