@@ -22,7 +22,7 @@ class _CategoriesScopeState extends State<CategoriesScope> {
         Category(title: 'Italian', color: Colors.purple),
         Category(title: 'Quick & Easy', color: Colors.red),
         Category(title: 'Hamburgers', color: Colors.orange),
-        Category(title: 'German', color: Colors.yellow),
+        Category(title: 'German', color: Colors.brown),
         Category(title: 'Light & Lovely', color: Colors.lightBlue),
         Category(title: 'Exotic', color: Colors.green),
         Category(title: 'Breakfast', color: Colors.teal),
