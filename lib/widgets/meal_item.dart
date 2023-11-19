@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meals_enhanced/extensions/capitalize.dart';
 import 'package:meals_enhanced/models/meal.dart';
+import 'package:meals_enhanced/screens/meal_details_screen.dart';
 import 'package:meals_enhanced/widgets/meal_item_brief_summary_item.dart';
 import 'package:transparent_image/transparent_image.dart';
 
@@ -14,6 +15,15 @@ class MealItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.fromLTRB(4, 6, 4, 0),
       child: InkWell(
+        onTap: () {
+          Navigator.of(context).push(
+            MaterialPageRoute<void>(
+              builder: (context) {
+                return MealDetailsScreen(meal: meal);
+              },
+            ),
+          );
+        },
         child: Card(
           clipBehavior: Clip.hardEdge,
           child: Stack(
