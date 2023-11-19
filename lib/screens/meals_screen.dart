@@ -14,6 +14,17 @@ class MealsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(title),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            for (final meal in meals) MealItem(meal: meal),
+          ],
+        ),
+      ),
+    );
   }
 }
