@@ -7,7 +7,7 @@ class CategoriesScope extends StatefulWidget {
 
   final Widget child;
 
-  List<Category> watch(BuildContext context) =>
+  static List<Category> watch(BuildContext context) =>
       context.dependOnInheritedWidgetOfExactType<_CategoriesInherited>()!.categories;
 
   @override
