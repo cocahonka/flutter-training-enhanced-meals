@@ -33,12 +33,15 @@ class MealItem extends StatelessWidget {
                   color: Colors.black54,
                   child: Column(
                     children: [
-                      Text(
-                        meal.name,
-                        style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 4),
+                        child: Text(
+                          meal.name,
+                          style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                        ),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 8, bottom: 4),

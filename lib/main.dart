@@ -23,7 +23,7 @@ class MealApp extends StatelessWidget {
         child: MaterialApp(
           theme: ThemeData.dark().copyWith(
             colorScheme: colorScheme,
-            textTheme: GoogleFonts.latoTextTheme(),
+            textTheme: GoogleFonts.comfortaaTextTheme(),
           ),
           home: const CategoriesScreen(),
         ),

@@ -41,7 +41,7 @@ class CategoryItem extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(18),
+          padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 12),
           child: Text(
             category.title,
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
