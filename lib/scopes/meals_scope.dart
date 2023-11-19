@@ -245,9 +245,9 @@ class _MealsScopeState extends State<MealsScope> {
       categories: ['c9'],
     ),
     Meal(
-      name:
+      name: 'Seared Scallops',
+      imageUrl:
           'https://www.sprinklesandsprouts.com/wp-content/uploads/2017/11/Pan-Seared-Scallops-with-creamy-Saffron-sauce.jpg',
-      imageUrl: 'assets/images/seared_scallops.jpg',
       duration: Duration(minutes: 35),
       complexity: Complexity.moderate,
       affordability: Affordability.luxurious,
