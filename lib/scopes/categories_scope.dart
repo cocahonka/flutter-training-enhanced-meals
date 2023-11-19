@@ -19,16 +19,16 @@ class _CategoriesScopeState extends State<CategoriesScope> {
   Widget build(BuildContext context) {
     return _CategoriesInherited(
       categories: const [
-        Category(title: 'Italian', color: Colors.purple),
-        Category(title: 'Quick & Easy', color: Colors.red),
-        Category(title: 'Hamburgers', color: Colors.orange),
-        Category(title: 'German', color: Colors.brown),
-        Category(title: 'Light & Lovely', color: Colors.lightBlue),
-        Category(title: 'Exotic', color: Colors.green),
-        Category(title: 'Breakfast', color: Colors.teal),
-        Category(title: 'Asian', color: Colors.pink),
-        Category(title: 'French', color: Colors.blue),
-        Category(title: 'Summer', color: Colors.amber),
+        Category(title: 'Italian', color: Colors.purple, id: 'c1'),
+        Category(title: 'Quick & Easy', color: Colors.red, id: 'c2'),
+        Category(title: 'Hamburgers', color: Colors.orange, id: 'c3'),
+        Category(title: 'German', color: Colors.brown, id: 'c4'),
+        Category(title: 'Light & Lovely', color: Colors.lightBlue, id: 'c5'),
+        Category(title: 'Exotic', color: Colors.green, id: 'c6'),
+        Category(title: 'Breakfast', color: Colors.teal, id: 'c7'),
+        Category(title: 'Asian', color: Colors.pink, id: 'c8'),
+        Category(title: 'French', color: Colors.blue, id: 'c9'),
+        Category(title: 'Summer', color: Colors.amber, id: 'c10'),
       ],
       child: widget.child,
     );

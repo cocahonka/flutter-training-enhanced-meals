@@ -36,7 +36,7 @@ class Meal {
   final bool isVegeterian;
   final bool isVegan;
 
-  final List<Category> categories;
+  final List<String> categories;
 
   @override
   bool operator ==(Object other) => throw UnsupportedError(
