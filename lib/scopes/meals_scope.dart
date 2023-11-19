@@ -11,7 +11,7 @@ class MealsScope extends StatefulWidget {
 
   final Widget child;
 
-  List<Meal> watch(BuildContext context) => context.dependOnInheritedWidgetOfExactType<_MealsInherited>()!.meals;
+  static List<Meal> watch(BuildContext context) => context.dependOnInheritedWidgetOfExactType<_MealsInherited>()!.meals;
 
   @override
   State<MealsScope> createState() => _MealsScopeState();
