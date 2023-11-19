@@ -25,10 +25,7 @@ class CategoriesScreen extends StatelessWidget {
           itemCount: categories.length,
           itemBuilder: (context, index) {
             final category = categories[index];
-            return CategoryItem(
-              category: category,
-              onTap: () {},
-            );
+            return CategoryItem(category: category);
           },
         ),
       ),
