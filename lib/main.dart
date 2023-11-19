@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:meals_enhanced/scopes/categories_scope.dart';
+import 'package:meals_enhanced/screens/categories_screen.dart';
 
 void main() {
   runApp(const MealApp());
@@ -9,11 +11,15 @@ class MealApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Meals app!'),
-        ),
+    final colorScheme = ColorScheme.fromSeed(
+      brightness: Brightness.dark,
+      seedColor: const Color.fromARGB(255, 131, 57, 0),
+    );
+
+    return MaterialApp(
+      theme: ThemeData.dark().copyWith(colorScheme: colorScheme),
+      home: const CategoriesScope(
+        child: CategoriesScreen(),
       ),
     );
   }
