@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:meals_enhanced/models/category.dart';
-import 'package:meals_enhanced/scopes/meals_scope.dart';
 import 'package:meals_enhanced/screens/meals_screen.dart';
 
 class CategoryItem extends StatelessWidget {
@@ -20,10 +19,7 @@ class CategoryItem extends StatelessWidget {
         Navigator.of(context).push(
           MaterialPageRoute<void>(
             builder: (context) {
-              return MealsScreen(
-                title: category.title,
-                meals: MealsScope.watch(context).where((meal) => meal.categories.contains(category.id)).toList(),
-              );
+              return MealsScreen(category: category);
             },
           ),
         );

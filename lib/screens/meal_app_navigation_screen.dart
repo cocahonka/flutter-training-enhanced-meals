@@ -39,7 +39,7 @@ class _MealAppNavigationScreenState extends State<MealAppNavigationScreen> {
 
     final Widget content = switch (_currentPage) {
       TabsContent.categories => const CategoriesScreen(),
-      TabsContent.favorites => MealsScreen(title: title, meals: []),
+      TabsContent.favorites => const MealsScreen(),
     };
 
     return Scaffold(
