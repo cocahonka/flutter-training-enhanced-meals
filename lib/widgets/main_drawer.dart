@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meals_enhanced/screens/filters_screen.dart';
 import 'package:meals_enhanced/widgets/drawer_tile.dart';
 
 class MainDrawer extends StatelessWidget {
@@ -37,8 +38,26 @@ class MainDrawer extends StatelessWidget {
               ],
             ),
           ),
-          DrawerTile(icon: Icons.restaurant, text: 'Meals', onTap: () {}),
-          DrawerTile(icon: Icons.settings, text: 'Filters', onTap: () {}),
+          DrawerTile(
+            icon: Icons.restaurant,
+            text: 'Meals',
+            onTap: () {
+              Navigator.of(context).pop();
+            },
+          ),
+          DrawerTile(
+            icon: Icons.settings,
+            text: 'Filters',
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute<void>(
+                  builder: (context) {
+                    return const FiltersScreen();
+                  },
+                ),
+              );
+            },
+          ),
         ],
       ),
     );
