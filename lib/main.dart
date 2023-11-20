@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:meals_enhanced/scopes/categories_scope.dart';
+import 'package:meals_enhanced/scopes/favorites_meals_scope.dart';
 import 'package:meals_enhanced/scopes/meals_scope.dart';
 import 'package:meals_enhanced/screens/meal_app_navigation_screen.dart';
 
@@ -20,12 +21,14 @@ class MealApp extends StatelessWidget {
 
     return CategoriesScope(
       child: MealsScope(
-        child: MaterialApp(
-          theme: ThemeData.dark().copyWith(
-            colorScheme: colorScheme,
-            textTheme: GoogleFonts.comfortaaTextTheme(),
+        child: FavoritesMealsScope(
+          child: MaterialApp(
+            theme: ThemeData.dark().copyWith(
+              colorScheme: colorScheme,
+              textTheme: GoogleFonts.comfortaaTextTheme(),
+            ),
+            home: const MealAppNavigationScreen(),
           ),
-          home: const MealAppNavigationScreen(),
         ),
       ),
     );

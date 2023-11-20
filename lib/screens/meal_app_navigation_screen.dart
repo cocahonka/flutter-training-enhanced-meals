@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meals_enhanced/extensions/capitalize.dart';
+import 'package:meals_enhanced/scopes/favorites_meals_scope.dart';
 import 'package:meals_enhanced/screens/categories_screen.dart';
 import 'package:meals_enhanced/screens/meals_screen.dart';
 
@@ -39,8 +40,8 @@ class _MealAppNavigationScreenState extends State<MealAppNavigationScreen> {
 
     final Widget content = switch (_currentPage) {
       TabsContent.categories => const CategoriesScreen(),
-      TabsContent.favorites => MealsScreen(
-          getMeals: (context) => [],
+      TabsContent.favorites => const MealsScreen(
+          getMeals: FavoritesMealsScope.watch,
           emptyMealsMessage: "You don't have favorites meals!",
         ),
     };
