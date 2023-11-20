@@ -20,9 +20,9 @@ class MealApp extends StatelessWidget {
       seedColor: const Color.fromARGB(255, 131, 57, 0),
     );
 
-    return CategoriesScope(
-      child: FiltersScope(
-        child: MealsScope(
+    return FiltersScope(
+      child: MealsScope(
+        child: CategoriesScope(
           child: FavoritesMealsScope(
             child: MaterialApp(
               theme: ThemeData.dark().copyWith(
