@@ -27,7 +27,7 @@ class _CategoriesScopeState extends State<CategoriesScope> {
         Category(title: 'Exotic', color: Colors.green, id: 'c6'),
         Category(title: 'Breakfast', color: Colors.teal, id: 'c7'),
         Category(title: 'Asian', color: Colors.pink, id: 'c8'),
-        Category(title: 'French', color: Colors.blue, id: 'c9'),
+        Category(title: 'French', color: Color.fromARGB(255, 33, 86, 243), id: 'c9'),
         Category(title: 'Summer', color: Colors.amber, id: 'c10'),
       ],
       child: widget.child,
