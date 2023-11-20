@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:meals_enhanced/scopes/categories_scope.dart';
 import 'package:meals_enhanced/scopes/meals_scope.dart';
-import 'package:meals_enhanced/screens/categories_screen.dart';
+import 'package:meals_enhanced/screens/meal_app_navigation_screen.dart';
 
 void main() {
   runApp(const MealApp());
@@ -25,7 +25,7 @@ class MealApp extends StatelessWidget {
             colorScheme: colorScheme,
             textTheme: GoogleFonts.comfortaaTextTheme(),
           ),
-          home: const CategoriesScreen(),
+          home: const MealAppNavigationScreen(),
         ),
       ),
     );
