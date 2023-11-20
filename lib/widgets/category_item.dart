@@ -14,7 +14,7 @@ class CategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      hoverColor: Theme.of(context).colorScheme.primary,
+      splashColor: Theme.of(context).colorScheme.primary,
       customBorder: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       onTap: () {
         Navigator.of(context).push(
