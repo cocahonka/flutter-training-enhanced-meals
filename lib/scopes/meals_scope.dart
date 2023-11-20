@@ -3,7 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:meals_enhanced/models/affordability.dart';
 import 'package:meals_enhanced/models/complexity.dart';
+import 'package:meals_enhanced/models/filters.dart';
 import 'package:meals_enhanced/models/meal.dart';
+import 'package:meals_enhanced/scopes/filters_scope.dart';
 
 @immutable
 class MealsScope extends StatefulWidget {
@@ -367,11 +369,24 @@ class _MealsScopeState extends State<MealsScope> {
       categories: ['c2', 'c7'],
     ),
   ];
+  late Filters _filters;
+
+  @override
+  void didChangeDependencies() {
+    _filters = FiltersScope.watch(context);
+    super.didChangeDependencies();
+  }
 
   @override
   Widget build(BuildContext context) {
     return _MealsInherited(
-      meals: _meals,
+      meals: _meals.where((meal) {
+        if (!meal.isGlutenFree && _filters.isGlutenFree) return false;
+        if (!meal.isLactoseFree && _filters.isLactoseFree) return false;
+        if (!meal.isVegeterian && _filters.isVegeterian) return false;
+        if (!meal.isVegan && _filters.isVegan) return false;
+        return true;
+      }).toList(),
       child: widget.child,
     );
   }
