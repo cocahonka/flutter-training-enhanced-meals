@@ -6,8 +6,9 @@ class FiltersScope extends StatefulWidget {
 
   final Widget child;
 
-  Filters watch(BuildContext context) => context.dependOnInheritedWidgetOfExactType<_FiltersInherited>()!.filters;
-  Filters read(BuildContext context) => context.getInheritedWidgetOfExactType<_FiltersInherited>()!.filters;
+  static Filters watch(BuildContext context) =>
+      context.dependOnInheritedWidgetOfExactType<_FiltersInherited>()!.filters;
+  static Filters read(BuildContext context) => context.getInheritedWidgetOfExactType<_FiltersInherited>()!.filters;
 
   @override
   State<FiltersScope> createState() => _FiltersScopeState();
