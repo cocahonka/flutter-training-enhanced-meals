@@ -3,6 +3,7 @@ import 'package:meals_enhanced/extensions/capitalize.dart';
 import 'package:meals_enhanced/scopes/favorites_meals_scope.dart';
 import 'package:meals_enhanced/screens/categories_screen.dart';
 import 'package:meals_enhanced/screens/meals_screen.dart';
+import 'package:meals_enhanced/widgets/main_drawer.dart';
 
 enum TabsContent {
   categories(icon: Icons.set_meal),
@@ -50,6 +51,7 @@ class _MealAppNavigationScreenState extends State<MealAppNavigationScreen> {
       appBar: AppBar(
         title: Text(title),
       ),
+      drawer: const MainDrawer(),
       bottomNavigationBar: NavigationBar(
         selectedIndex: _currentIndex,
         onDestinationSelected: _indexChanged,
