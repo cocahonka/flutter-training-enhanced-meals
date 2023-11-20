@@ -1,5 +1,3 @@
-// ignore_for_file: hash_and_equals
-
 import 'package:flutter/foundation.dart';
 import 'package:meals_enhanced/models/affordability.dart';
 import 'package:meals_enhanced/models/complexity.dart';
@@ -56,7 +54,37 @@ class Meal {
   }
 
   @override
-  bool operator ==(Object other) => throw UnsupportedError(
-        'Comparison of Meal objects is not supported.',
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+
+    return other is Meal &&
+        other.name == name &&
+        other.imageUrl == imageUrl &&
+        other.duration == duration &&
+        other.complexity == complexity &&
+        other.affordability == affordability &&
+        listEquals(other.ingredients, ingredients) &&
+        listEquals(other.steps, steps) &&
+        other.isGlutenFree == isGlutenFree &&
+        other.isLactoseFree == isLactoseFree &&
+        other.isVegeterian == isVegeterian &&
+        other.isVegan == isVegan &&
+        listEquals(other.categories, categories);
+  }
+
+  @override
+  int get hashCode => Object.hash(
+        name,
+        imageUrl,
+        duration,
+        complexity,
+        affordability,
+        ingredients,
+        steps,
+        isGlutenFree,
+        isLactoseFree,
+        isVegeterian,
+        isVegan,
+        categories,
       );
 }
