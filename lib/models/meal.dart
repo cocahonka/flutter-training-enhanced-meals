@@ -38,6 +38,23 @@ class Meal {
 
   final List<String> categories;
 
+  Meal clone() {
+    return Meal(
+      name: name,
+      imageUrl: imageUrl,
+      duration: duration,
+      complexity: complexity,
+      affordability: affordability,
+      ingredients: [...ingredients],
+      steps: [...steps],
+      isGlutenFree: isGlutenFree,
+      isLactoseFree: isLactoseFree,
+      isVegeterian: isVegeterian,
+      isVegan: isVegan,
+      categories: [...categories],
+    );
+  }
+
   @override
   bool operator ==(Object other) => throw UnsupportedError(
         'Comparison of Meal objects is not supported.',
