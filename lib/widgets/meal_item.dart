@@ -17,8 +17,9 @@ class MealItem extends StatelessWidget {
       child: InkWell(
         onTap: () {
           Navigator.of(context).push(
-            MaterialPageRoute<void>(
-              builder: (context) {
+            PageRouteBuilder<void>(
+              transitionDuration: const Duration(seconds: 1),
+              pageBuilder: (_, __, ___) {
                 return MealDetailsScreen(meal: meal);
               },
             ),
@@ -30,6 +31,35 @@ class MealItem extends StatelessWidget {
             children: [
               Hero(
                 tag: meal.hashCode,
+                flightShuttleBuilder: (
+                  flightContext,
+                  animation,
+                  flightDirection,
+                  fromHeroContext,
+                  toHeroContext,
+                ) {
+                  final edgeAnimation = Tween<double>(begin: 0, end: 90).animate(animation);
+
+                  return AnimatedBuilder(
+                    animation: edgeAnimation,
+                    builder: (context, child) {
+                      return ClipRRect(
+                        borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(edgeAnimation.value),
+                          bottomRight: Radius.circular(edgeAnimation.value),
+                        ),
+                        child: child,
+                      );
+                    },
+                    child: FadeInImage.memoryNetwork(
+                      placeholder: kTransparentImage,
+                      image: meal.imageUrl,
+                      width: double.infinity,
+                      height: 200,
+                      fit: BoxFit.cover,
+                    ),
+                  );
+                },
                 child: FadeInImage.memoryNetwork(
                   placeholder: kTransparentImage,
                   image: meal.imageUrl,
