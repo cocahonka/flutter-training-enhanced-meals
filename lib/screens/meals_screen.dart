@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:meals_enhanced/models/category.dart';
-import 'package:meals_enhanced/scopes/meals_scope.dart';
+import 'package:meals_enhanced/models/meal.dart';
 import 'package:meals_enhanced/widgets/meal_item.dart';
 
 class MealsScreen extends StatelessWidget {
   const MealsScreen({
-    this.category,
+    required this.getMeals,
+    required this.emptyMealsMessage,
+    this.title,
     super.key,
   });
 
-  final Category? category;
+  final List<Meal> Function(BuildContext) getMeals;
+  final String? title;
+  final String emptyMealsMessage;
 
   @override
   Widget build(BuildContext context) {
-    var meals = MealsScope.watch(context);
-
-    if (category != null) {
-      meals = meals.where((meal) => meal.categories.contains(category!.id)).toList();
-    }
+    final meals = getMeals(context);
 
     final Widget body;
     if (meals.isNotEmpty) {
@@ -40,7 +39,7 @@ class MealsScreen extends StatelessWidget {
                   ),
             ),
             Text(
-              category != null ? 'Try selecting a different category!' : "You don't have favorites meals!",
+              emptyMealsMessage,
               style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                     color: Theme.of(context).colorScheme.onBackground,
                   ),
@@ -50,10 +49,10 @@ class MealsScreen extends StatelessWidget {
       );
     }
 
-    if (category != null) {
+    if (title != null) {
       return Scaffold(
         appBar: AppBar(
-          title: Text(category!.title),
+          title: Text(title!),
         ),
         body: body,
       );

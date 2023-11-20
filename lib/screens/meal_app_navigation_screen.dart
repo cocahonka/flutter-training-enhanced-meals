@@ -39,7 +39,10 @@ class _MealAppNavigationScreenState extends State<MealAppNavigationScreen> {
 
     final Widget content = switch (_currentPage) {
       TabsContent.categories => const CategoriesScreen(),
-      TabsContent.favorites => const MealsScreen(),
+      TabsContent.favorites => MealsScreen(
+          getMeals: (context) => [],
+          emptyMealsMessage: "You don't have favorites meals!",
+        ),
     };
 
     return Scaffold(
