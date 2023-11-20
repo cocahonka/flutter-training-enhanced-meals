@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meals_enhanced/models/category.dart';
-import 'package:meals_enhanced/models/meal.dart';
+import 'package:meals_enhanced/scopes/meals_scope.dart';
 import 'package:meals_enhanced/widgets/meal_item.dart';
 
 class MealsScreen extends StatelessWidget {
@@ -13,7 +13,7 @@ class MealsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var meals = <Meal>[]; //MealsScope.watch(context);
+    var meals = MealsScope.watch(context);
 
     if (category != null) {
       meals = meals.where((meal) => meal.categories.contains(category!.id)).toList();
