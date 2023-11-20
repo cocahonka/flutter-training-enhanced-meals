@@ -31,11 +31,11 @@ class _FiltersScopeState extends State<FiltersScope> {
   }
 }
 
-class _FiltersInherited extends InheritedNotifier {
+class _FiltersInherited extends InheritedNotifier<Filters> {
   const _FiltersInherited({
     required this.filters,
     required super.child,
-  });
+  }) : super(notifier: filters);
 
   final Filters filters;
 }
